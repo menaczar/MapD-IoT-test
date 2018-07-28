@@ -6,6 +6,9 @@
 #define DHTPIN            D5
 #define DHTTYPE           DHT11 
 
+String room = "<room name>";
+String serverAddress = "<server address>";
+
 DHT_Unified dht(DHTPIN, DHTTYPE);
 uint32_t delayMS;
 
@@ -41,9 +44,12 @@ void loop() {
    float humidity = event.relative_humidity;
    
    HTTPClient http;    //Declare object of class HTTPClient
-   http.begin("http://<server address>:3000/log?room=X15&temp="+ String(temerature)+"&humidity="+ String(humidity));      //Request
+   http.begin("http://" + serverAddress
+   + ":3000/log?room=" + room
+   + "&temp=" + String(temerature)
+   + "&humidity=" + String(humidity));      //Request
  
-   int httpCode = http.POST("Message from ESP8266");   //Send the request
+   int httpCode = http.POST("Message from " + room);   //Send the request
    String payload = http.getString();                  //Get the response payload
  
    Serial.println(httpCode);   //Print HTTP return code
