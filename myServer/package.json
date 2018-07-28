@@ -1,0 +1,16 @@
+{
+  "name": "myserver",
+  "version": "1.0.0",
+  "description": "Server listens to requests and adds data to a csv",
+  "repository": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "author": "Mena Morkos",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.16.3",
+    "time-stamp": "^2.0.0"
+  }
+}
