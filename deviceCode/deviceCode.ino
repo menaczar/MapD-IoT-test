@@ -11,7 +11,7 @@ uint32_t delayMS;
 
 void setup() {
  
-  Serial.begin(115200);                                  //Serial connection
+  Serial.begin(115200);    //Serial connection
   WiFi.begin("SSID", "Password");   //WiFi connection
  
   while (WiFi.status() != WL_CONNECTED) {  //Wait for the WiFI connection completion
@@ -39,7 +39,6 @@ void loop() {
    float temerature = event.temperature * 1.8 + 32; 
    dht.humidity().getEvent(&event);
    float humidity = event.relative_humidity;
-   
    
    HTTPClient http;    //Declare object of class HTTPClient
    http.begin("http://<server address>:3000/log?room=X15&temp="+ String(temerature)+"&humidity="+ String(humidity));      //Request
