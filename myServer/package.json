@@ -1,7 +1,7 @@
 {
   "name": "myserver",
   "version": "1.0.0",
-  "description": "Server listens to requests and adds data to a csv",
+  "description": "Server listens to requests and adds data to a log.csv",
   "repository": "https://github.com/menaczar/MapD-IoT-test.git",
   "main": "index.js",
   "scripts": {
